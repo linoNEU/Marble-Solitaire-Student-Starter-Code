@@ -1,5 +1,4 @@
-<!--suppress ALL -->
-<p>Marble Solitaire</p>
+<h2>Marble Solitaire</h2>
 <h3>1. About the game</h3>
 
 <p>In this assignment, you will implement a model of a game called &ldquo;Peg Solitaire.&rdquo; This is a board game played by a single player. The game involves moving pegs on a game board with holes. Many modern versions use marbles instead of pegs, giving it the name &ldquo;Marble Solitaire.&rdquo; The image above shows a Marble Solitaire board. It is referred to as a Solitaire-type game, and is also called Brainvita in some countries. If you have not played this game before, <span><a href="https://www.webgamesonline.com/peg-solitaire/">try it here!</a></span></p>
@@ -23,13 +22,13 @@
     <li><span style="font-family: 'courier new', courier,serif;">int getScore() </span>returns the current score in the game (i.e., the number of marbles on the board).</li>
 </ul>
 <p>&nbsp;</p>
-<h4>2.2.<tt> </tt>Unit tests</h4>
+<h4>2.2. Unit tests</h4>
 <p>You must check that your<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier,serif;"><span class="JavaHighlight"><span class="ProfjType">MarbleSolitaireModelImpl</span></span></span><span>&nbsp;</span>implementation of the<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier,serif;"><span class="JavaHighlight"><span class="ProfjType">MarbleSolitaireModel</span></span></span><span>&nbsp;</span>interface works as specified. <span style="text-decoration: underline;">We recommend that you create an empty implementation, and then proceed to write your tests</span>. This will allow you to understand how your class will be used, which will help you to implement it.&nbsp;</p>
 <p>We will no longer offer unit tests in our auto-grader. Instead, you need to prove that you have written a comprehensive set of tests. The best way to show this to us is by <span style="text-decoration: underline;">running your tests with coverage</span>.</p>
 <p>&nbsp;</p>
 
-<h4>2.3.<tt> </tt>Your Implementation</h4>
-<p>Implement the<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier;"><span class="JavaHighlight"><span class="ProfjType">MarbleSolitaireModel</span></span></span><span>&nbsp;</span>interface in a class called<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier;"><span class="JavaHighlight"><span class="ProfjType">MarbleSolitaireModelImpl</span></span></span>:</p>
+<h4>2.3. Your Implementation</h4>
+<p>Implement the<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier,serif;"><span class="JavaHighlight"><span class="ProfjType">MarbleSolitaireModel</span></span></span><span>&nbsp;</span>interface in a class called<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier,serif;"><span class="JavaHighlight"><span class="ProfjType">MarbleSolitaireModelImpl</span></span></span>:</p>
 <ol>
     <li>
         <p>Design a suitable representation of this game. Think carefully about what fields and types you will need, and how possible values of the fields correspond to game states.</p>
@@ -59,28 +58,28 @@
         <p>Carefully think about the shape of the board and our positioning scheme to infer which positions are invalid. <span style="text-decoration: underline;">Make sure you avoid code duplication (this includes your four constructors).</span></p>
     </li>
     <li>
-        <p><span>The game state:</span><span>&nbsp;</span>The<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier;"><span class="JavaHighlight"><span class="ProfjIdentifier">getGameState</span></span></span><span>&nbsp;</span>method may be used to print the game state in the format illustrated below. Specifically each slot should be one character (<span class="RktBlk"><span class="JavaHighlight"><span class="ProfjLiteral">' '</span></span></span>,<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjLiteral">'O'</span></span></span><span>&nbsp;</span>or<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjLiteral">'_'</span></span></span>) and there should be one space between the positions. There should be no spaces after the last slot in a row. The following shows the output corresponding to the screenshot above:</p>
+        <p><span>The game state:</span><span>&nbsp;</span>The<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier,serif;"><span class="JavaHighlight"><span class="ProfjIdentifier">getGameState</span></span></span><span>&nbsp;</span>method may be used to print the game state in the format illustrated below. Specifically each slot should be one character (<span class="RktBlk"><span class="JavaHighlight"><span class="ProfjLiteral">' '</span></span></span>,<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjLiteral">'O'</span></span></span><span>&nbsp;</span>or<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjLiteral">'_'</span></span></span>) and there should be one space between the positions. There should be no spaces after the last slot in a row. The following shows the output corresponding to the screenshot above:</p>
         <p>&nbsp;</p>
         <pre> &nbsp; &nbsp;O O O &nbsp; &nbsp;<br /> &nbsp; &nbsp;O O O &nbsp; &nbsp;<br />O O O O O O O<br />O O O _ O O O<br />O O O O O O O<br /> &nbsp; &nbsp;O O O &nbsp; &nbsp;<br /> &nbsp; &nbsp;O O O &nbsp; &nbsp;</pre>
         <p>&nbsp;</p>
     </li>
     <li>
-        <p><span>Move:</span><span>&nbsp;</span>The<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjIdentifier">move</span></span></span><span>&nbsp;</span>method should make the move and change the game state appropriately. A move is valid if all these conditions are true: (a) the &ldquo;from&rdquo; and &ldquo;to&rdquo; positions are valid (b) there is a marble at the specified &ldquo;from&rdquo; position (c) the &ldquo;to&rdquo; position is empty (d) the &ldquo;to&rdquo; and &ldquo;from&rdquo; positions are exactly two positions away (horizontally or vertically) (e) there is a marble in the slot between the &ldquo;to&rdquo; and &ldquo;from&rdquo; positions. Any invalid move should result in an<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier;"><span class="JavaHighlight"><span class="ProfjType">IllegalArgumentException</span></span></span><span>&nbsp;</span>exception with an appropriate message on a single line. The text of the message is up to you.</p>
+        <p><span>Move:</span><span>&nbsp;</span>The<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjIdentifier">move</span></span></span><span>&nbsp;</span>method should make the move and change the game state appropriately. A move is valid if all these conditions are true: (a) the &ldquo;from&rdquo; and &ldquo;to&rdquo; positions are valid (b) there is a marble at the specified &ldquo;from&rdquo; position (c) the &ldquo;to&rdquo; position is empty (d) the &ldquo;to&rdquo; and &ldquo;from&rdquo; positions are exactly two positions away (horizontally or vertically) (e) there is a marble in the slot between the &ldquo;to&rdquo; and &ldquo;from&rdquo; positions. Any invalid move should result in an<span>&nbsp;</span><span class="RktBlk" style="font-family: 'courier new', courier,serif;"><span class="JavaHighlight"><span class="ProfjType">IllegalArgumentException</span></span></span><span>&nbsp;</span>exception with an appropriate message on a single line. The text of the message is up to you.</p>
         <p>For example, the only valid moves on the board shown above start from<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjKeyword">(</span><span class="ProfjLiteral">5</span><span class="ProfjDefault">,</span> <span class="ProfjLiteral">3</span><span class="ProfjKeyword">)</span></span></span>,<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjKeyword">(</span><span class="ProfjLiteral">1</span><span class="ProfjDefault">,</span> <span class="ProfjLiteral">3</span><span class="ProfjKeyword">)</span></span></span>,<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjKeyword">(</span><span class="ProfjLiteral">3</span><span class="ProfjDefault">,</span> <span class="ProfjLiteral">1</span><span class="ProfjKeyword">)</span></span></span><span>&nbsp;</span>or<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjKeyword">(</span><span class="ProfjLiteral">3</span><span class="ProfjDefault">,</span> <span class="ProfjLiteral">5</span><span class="ProfjKeyword">)</span></span></span>, and all move to<span>&nbsp;</span><span class="RktBlk"><span class="JavaHighlight"><span class="ProfjKeyword">(</span><span class="ProfjLiteral">3</span><span class="ProfjDefault">,</span> <span class="ProfjLiteral">3</span><span class="ProfjKeyword">)</span></span></span>.</p>
     </li>
 </ol>
 <p>Be sure to properly document your code with <em>Javadoc</em> as appropriate. Method implementations that inherit <em>Javadoc</em> need not provide their own unless they implement something different or in addition to what is specified in the inherited documentation.</p>
 <p>&nbsp;</p>
-<h3>3.<tt> </tt>List of Deliverables</h3>
+<h3>3. List of Deliverables</h3>
 <ul>
     <li>
         <p><em>/src</em> directory:</p>
         <ul>
             <li>
-                <p>The interface (<span class="RktSym" style="font-family: 'courier new', courier;">MarbleSolitaireModel.java</span>)</p>
+                <p>The interface (<span class="RktSym" style="font-family: 'courier new', courier,serif;">MarbleSolitaireModel.java</span>)</p>
             </li>
             <li>
-                <p>Implementation of the interface(<span class="RktSym" style="font-family: 'courier new', courier;">MarbleSolitaireModelImpl.java</span>)</p>
+                <p>Implementation of the interface(<span class="RktSym" style="font-family: 'courier new', courier,serif;">MarbleSolitaireModelImpl.java</span>)</p>
             </li>
             <li>
                 <p>Any additional classes you saw fit to write</p>
@@ -100,9 +99,9 @@
         </ul>
     </li>
 </ul>
-<p><span>Please ensure all of your project&rsquo;s&nbsp;source&nbsp;is in the&nbsp;<span class="RktBlk" style="font-family: 'courier new', courier;"><span class="JavaHighlight"><span class="ProfjIdentifier">solitaire</span></span></span>&nbsp;package. Place your tests in the default package.</span></p>
+<p><span>Please ensure all of your project&rsquo;s&nbsp;source&nbsp;is in the&nbsp;<span class="RktBlk" style="font-family: 'courier new', courier,serif;"><span class="JavaHighlight"><span class="ProfjIdentifier">solitaire</span></span></span>&nbsp;package. Place your tests in the default package.</span></p>
 <p>&nbsp;</p>
-<h3>4.<tt> </tt>Grading Standards</h3>
+<h3>4. Grading Standards</h3>
 <div class="SIntrapara">For this assignment, you will be graded on</div>
 <div class="SIntrapara">
     <ul>
